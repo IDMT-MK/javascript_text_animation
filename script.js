@@ -1,40 +1,48 @@
 // JavaScript
 
 // フェード
-const fade = document.querySelector('.fade');
-
-const fadeKeyframes = {
+const fade = document.querySelectorAll('.fade');
+console.log(fade);
+// for文
+for(let i = 0; i < fade.length; i++){
+const keyframes = {
   opacity: [0, 1],
 }
 
-const fadeOptions = {
-  duration: 3000,
+const options = {
+  duration: 5000,
   easing: 'ease',
   fill: 'forwards',
+  delay: i * 400,
 }
 
-fade.animate(fadeKeyframes, fadeOptions);
+fade[i].animate(keyframes, options);
+}
 
 // 回転
-const spin = document.querySelector('.spin');
-
-const spinKeyframes = {
+const spin = document.querySelectorAll('.spin');
+console.log(spin);
+// for文
+for(let i = 0; i < spin.length; i++){
+const keyframes = {
   rotate: ['x 360deg','x 0deg'],
   opacity: [0, 1],
 }
 
-const spinOptions = {
+const options = {
   duration: 2000,
   easing: 'ease',
+  delay: i * 400,
 }
 
-spin.animate(spinKeyframes, spinOptions);
+spin[i].animate(keyframes, options);
+}
 
 // 色が変わる
 const color = document.querySelector('.color');
 
 const colorKeyframes = {
-  backgroundColor: ['orange ','yellow ','lightgreen','skyblue'],
+  backgroundColor: ['red ','orange ','yellow ','lightgreen','skyblue','blue ','purple ','lavender ','pink '],
 }
 
 const colorOptions = {
@@ -51,7 +59,7 @@ const line = document.querySelector('.line');
 
 const lineKeyframes = {
   width: ['0','100%'],
-  color: ['transparent','#FFF'],
+  color: ['transparent','#333'],
 }
 
 const lineOptions = {
@@ -64,16 +72,20 @@ line.animate(lineKeyframes,lineOptions);
 
 
 // 文字のスライドイン
-const slide = document.querySelector('.slide-in');
-
-const slideKeyframes = {
+const slide = document.querySelectorAll('.slide-in');
+console.log(slide);
+// for文
+for(let i = 0; i < slide.length; i++){
+const keyframes = {
   opacity: [0, 1],
-  translate: ['0 50px', 0],
+  translate: ['0 0px', 0],
 };
 
-const slideOptions = {
+const options = {
   duration: 1000,
   fill: 'forwards',
+  delay: i * 400,
 };
 
-slide.animate(slideKeyframes,slideOptions);
+slide[i].animate(keyframes, options);
+}
